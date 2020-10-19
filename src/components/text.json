@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Ashish",
+    "job": "Programmer"
+  },
+  {
+    "id": 2,
+    "name": "Ram",
+    "job": "Business"
+  },
+  {
+    "id": 3,
+    "name": "Hari",
+    "job": "Officer"
+  },
+  {
+    "id": 4,
+    "name": "Shyam",
+    "job": "Doctor"
+  },
+  {
+    "id": 5,
+    "name": "Gita",
+    "job": "Teacher"
+  },
+  {
+    "id": 6,
+    "name": "Sita",
+    "job": "Model"
+  },
+  {
+    "id": 7,
+    "name": "Prabin",
+    "job": "Actor"
+  }
+]
