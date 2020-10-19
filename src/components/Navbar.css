@@ -15,6 +15,7 @@
   top: 0;
   left: -100%;
   transition: 850ms;
+  z-index: 99;
 }
 
 .nav-menu.active {
@@ -49,6 +50,7 @@
 
 .nav-menu-items {
   width: 100%;
+  padding-top: 60px;
 }
 
 .navbar-toggle {
@@ -67,4 +69,5 @@ span {
 span.name {
   font-size: 18px;
   color: greenyellow;
+  margin-left: 0px;
 }

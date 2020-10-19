@@ -5,7 +5,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import CancelIcon from "@material-ui/icons/Cancel";
+// import CancelIcon from "@material-ui/icons/Cancel";
 
 import "./Navbar.css";
 import { Navbar, FormControl, Form } from "react-bootstrap";
@@ -24,7 +24,7 @@ export class NavBar extends Component {
   render() {
     return (
       <>
-        <Navbar bg="dark" variant="dark" className="navbar">
+        <Navbar bg="dark" variant="dark" className="navbar" fixed="top">
           <Navbar.Brand>
             <Link to="#" className="menu-bars">
               <MenuIcon onClick={this.showSidebar} />
@@ -52,9 +52,9 @@ export class NavBar extends Component {
           <ul className="nav-menu-items">
             <li className="navbar-toggle">
               <span className="name">Ashish Maharjan</span>
-              <Link to="#" className="menu-bars">
+              {/* <Link to="#" className="menu-bars">
                 <CancelIcon onClick={this.showSidebar} />
-              </Link>
+              </Link> */}
             </li>
             {SidebarData.map((item, index) => {
               return (
