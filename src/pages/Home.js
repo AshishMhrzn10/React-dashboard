@@ -2,20 +2,7 @@ import React from "react";
 import { Container, Row, Col, Table, Pagination } from "react-bootstrap";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
-const Head = styled.h1`
-  color: blue;
-`;
-
-const Column = styled(Col)`
-  text-align: center;
-  border: 1px solid black;
-  margin-bottom: 40px;
-`;
-
-const P = styled.p`
-  font-weight: bold;
-`;
+import TopComponents from "../components/TopComponents";
 
 const Thead = styled.thead`
   background-color: black;
@@ -31,24 +18,6 @@ const Sales = styled.div`
   margin-right: -15px;
 `;
 
-const Icon = styled.span`
-  position: absolute;
-  font-size: 19px;
-  background-color: dodgerblue;
-  width: 35px;
-  height: 30px;
-  color: white;
-  top: -16px;
-  right: -16px;
-  border-radius: 999px;
-`;
-
-const Span = styled.span`
-  display: inline-block;
-  position: relative;
-  margin-left: 0px;
-`;
-
 export default function Home() {
   let active = 2;
   let items = [];
@@ -61,59 +30,7 @@ export default function Home() {
   }
   return (
     <Container>
-      <Head>Dashboard</Head>
-      <div style={{ marginBottom: "40px" }}>
-        <span>From: </span> <input type="date" className="mr-4" />{" "}
-        <span>To: </span> <input type="date" />
-      </div>
-      <Row style={{ marginLeft: "-48px" }}>
-        <Column md={{ span: 1.5, offset: 1 }}>
-          <div>
-            <Span>
-              <img src={require("../images/todo.png")} alt="" />
-              <Icon>10</Icon>
-            </Span>
-            <P>New Order</P>
-          </div>
-        </Column>
-        <Column md={{ span: 1.5, offset: 1 }}>
-          <div>
-            <Span>
-              <img src={require("../images/todo.png")} alt="" />
-              <Icon>10</Icon>
-            </Span>
-            <P>Pending</P>
-          </div>
-        </Column>
-        <Column md={{ span: 1.5, offset: 1 }}>
-          <div>
-            <Span>
-              <img src={require("../images/todo.png")} alt="" />
-              <Icon>10</Icon>
-            </Span>
-            <P>Processing</P>
-          </div>
-        </Column>
-        <Column md={{ span: 1.5, offset: 1 }}>
-          <div>
-            <Span>
-              <img src={require("../images/todo.png")} alt="" />
-              <Icon>10</Icon>
-            </Span>
-            <P>Delivered</P>
-          </div>
-        </Column>
-        <Column md={{ span: 1.5, offset: 1 }}>
-          <div>
-            <Span>
-              <img src={require("../images/todo.png")} alt="" />
-              <Icon>10</Icon>
-            </Span>
-            <P>Cancelled</P>
-          </div>
-        </Column>
-      </Row>
-
+      <TopComponents />
       <Row>
         <Col md={8}>
           <Table striped bordered hover>

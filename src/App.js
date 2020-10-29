@@ -7,7 +7,7 @@ import NavBar from "./components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Order from "./pages/order";
+import Processing from "./pages/Processing";
 
 export class App extends Component {
   render() {
@@ -16,7 +16,7 @@ export class App extends Component {
         <NavBar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/order" component={Order} />
+          <Route path="/processing" component={Processing} />
         </Switch>
       </Router>
     );
