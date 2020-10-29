@@ -69,48 +69,45 @@ export default function Home() {
       <Row style={{ marginLeft: "-48px" }}>
         <Column md={{ span: 1.5, offset: 1 }}>
           <div>
-            <Span className="bell">
+            <Span>
               <img src={require("../images/todo.png")} alt="" />
-              <Icon className="bellnumbers">10</Icon>
+              <Icon>10</Icon>
             </Span>
             <P>New Order</P>
           </div>
         </Column>
         <Column md={{ span: 1.5, offset: 1 }}>
           <div>
-            <Span className="bell">
-              <Span className="bell">
-                <img src={require("../images/todo.png")} alt="" />
-                <Icon className="bellnumbers">10</Icon>
-              </Span>
-              <Icon className="bellnumbers">10</Icon>
+            <Span>
+              <img src={require("../images/todo.png")} alt="" />
+              <Icon>10</Icon>
             </Span>
             <P>Pending</P>
           </div>
         </Column>
         <Column md={{ span: 1.5, offset: 1 }}>
           <div>
-            <Span className="bell">
+            <Span>
               <img src={require("../images/todo.png")} alt="" />
-              <Icon className="bellnumbers">10</Icon>
+              <Icon>10</Icon>
             </Span>
             <P>Processing</P>
           </div>
         </Column>
         <Column md={{ span: 1.5, offset: 1 }}>
           <div>
-            <Span className="bell">
+            <Span>
               <img src={require("../images/todo.png")} alt="" />
-              <Icon className="bellnumbers">10</Icon>
+              <Icon>10</Icon>
             </Span>
             <P>Delivered</P>
           </div>
         </Column>
         <Column md={{ span: 1.5, offset: 1 }}>
           <div>
-            <Span className="bell">
+            <Span>
               <img src={require("../images/todo.png")} alt="" />
-              <Icon className="bellnumbers">10</Icon>
+              <Icon>10</Icon>
             </Span>
             <P>Cancelled</P>
           </div>
