@@ -31,6 +31,24 @@ const Sales = styled.div`
   margin-right: -15px;
 `;
 
+const Icon = styled.span`
+  position: absolute;
+  font-size: 19px;
+  background-color: dodgerblue;
+  width: 35px;
+  height: 30px;
+  color: white;
+  top: -16px;
+  right: -16px;
+  border-radius: 999px;
+`;
+
+const Span = styled.span`
+  display: inline-block;
+  position: relative;
+  margin-left: 0px;
+`;
+
 export default function Home() {
   let active = 2;
   let items = [];
@@ -51,31 +69,49 @@ export default function Home() {
       <Row style={{ marginLeft: "-48px" }}>
         <Column md={{ span: 1.5, offset: 1 }}>
           <div>
-            <img src={require("../images/todo.png")} alt="" />
+            <Span className="bell">
+              <img src={require("../images/todo.png")} alt="" />
+              <Icon className="bellnumbers">10</Icon>
+            </Span>
             <P>New Order</P>
           </div>
         </Column>
         <Column md={{ span: 1.5, offset: 1 }}>
           <div>
-            <img src={require("../images/todo.png")} alt="" />
+            <Span className="bell">
+              <Span className="bell">
+                <img src={require("../images/todo.png")} alt="" />
+                <Icon className="bellnumbers">10</Icon>
+              </Span>
+              <Icon className="bellnumbers">10</Icon>
+            </Span>
             <P>Pending</P>
           </div>
         </Column>
         <Column md={{ span: 1.5, offset: 1 }}>
           <div>
-            <img src={require("../images/todo.png")} alt="" />
+            <Span className="bell">
+              <img src={require("../images/todo.png")} alt="" />
+              <Icon className="bellnumbers">10</Icon>
+            </Span>
             <P>Processing</P>
           </div>
         </Column>
         <Column md={{ span: 1.5, offset: 1 }}>
           <div>
-            <img src={require("../images/todo.png")} alt="" />
+            <Span className="bell">
+              <img src={require("../images/todo.png")} alt="" />
+              <Icon className="bellnumbers">10</Icon>
+            </Span>
             <P>Delivered</P>
           </div>
         </Column>
         <Column md={{ span: 1.5, offset: 1 }}>
           <div>
-            <img src={require("../images/todo.png")} alt="" />
+            <Span className="bell">
+              <img src={require("../images/todo.png")} alt="" />
+              <Icon className="bellnumbers">10</Icon>
+            </Span>
             <P>Cancelled</P>
           </div>
         </Column>
