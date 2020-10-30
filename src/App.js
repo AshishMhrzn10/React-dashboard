@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Processing from "./pages/Processing";
+import Products from "./pages/Products";
 
 export class App extends Component {
   render() {
@@ -17,6 +18,7 @@ export class App extends Component {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/processing" component={Processing} />
+          <Route path="/products" component={Products} />
         </Switch>
       </Router>
     );

@@ -17,11 +17,6 @@ const TD2 = styled.td`
   border-bottom: 1px solid #dee2e6;
 `;
 
-// const button = styled(Button)`
-//   margin-top: -8px;
-//   margin-bottom: -6px;
-// `;
-
 function Processing() {
   return (
     <Container>
