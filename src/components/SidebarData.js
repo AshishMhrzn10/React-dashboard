@@ -8,6 +8,7 @@ import MessageIcon from "@material-ui/icons/Message";
 import SettingsIcon from "@material-ui/icons/Settings";
 import HistoryIcon from "@material-ui/icons/History";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
+import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
 
 export const SidebarData = [
   {
@@ -35,9 +36,15 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Products",
-    path: "/products",
+    title: "Inventory",
+    path: "/inventory",
     icon: <CardGiftcardIcon />,
+    cName: "nav-text",
+  },
+  {
+    title: "Delivery Man",
+    path: "/delivery_man/assign_order",
+    icon: <SupervisedUserCircleIcon />,
     cName: "nav-text",
   },
   {

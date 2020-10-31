@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Table, Pagination } from "react-bootstrap";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import TopComponents from "../components/TopComponents";
+import TopComponents from "../../components/TopComponents";
 
 const Thead = styled.thead`
   background-color: black;

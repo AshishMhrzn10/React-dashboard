@@ -63,7 +63,7 @@ function TopComponents() {
           </Link>
         </Column>
         <Column md={{ span: 1.5, offset: 1 }}>
-          <Link to="/processing">
+          <Link to="/home/pending">
             <Buttons>
               <div>
                 <Span>
@@ -76,7 +76,7 @@ function TopComponents() {
           </Link>
         </Column>
         <Column md={{ span: 1.5, offset: 1 }}>
-          <Link to="/processing">
+          <Link to="/home/processing">
             <Buttons>
               <div>
                 <Span>
@@ -89,7 +89,7 @@ function TopComponents() {
           </Link>
         </Column>
         <Column md={{ span: 1.5, offset: 1 }}>
-          <Link to="/processing">
+          <Link to="/home/delivered">
             <Buttons>
               <div>
                 <Span>

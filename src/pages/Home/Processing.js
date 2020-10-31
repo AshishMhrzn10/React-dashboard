@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Table, Button } from "react-bootstrap";
-import TopComponents from "../components/TopComponents";
+import TopComponents from "../../components/TopComponents";
 import styled from "styled-components";
 
 const TD = styled.td`

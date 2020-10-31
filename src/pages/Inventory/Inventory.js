@@ -16,7 +16,7 @@ const TD2 = styled.td`
   border-bottom: 1px solid #dee2e6;
 `;
 
-function Products() {
+function Inventory() {
   return (
     <Container>
       <Row className="my-3">
@@ -180,4 +180,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Inventory;
