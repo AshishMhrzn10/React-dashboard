@@ -34,13 +34,6 @@ function Inventory() {
       });
   }, []);
 
-  // selectCategory = () => {
-  //   const total = Response.length;
-  //   console.log(total);
-  //   category = Response.map((e) => e.category);
-  //   console.log(category);
-  // };
-
   return (
     <Container>
       <Row className="my-3">

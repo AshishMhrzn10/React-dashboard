@@ -15,22 +15,30 @@ import Delivered from "./pages/DeliveryMan/Delivered";
 import Pending from "./pages/DeliveryMan/Pending";
 import DeliveredHome from "./pages/Home/DeliveredHome";
 import PendingHome from "./pages/Home/PendingHome";
+import Login from "./pages/Login";
 
 export class App extends Component {
   render() {
+    const DefaultContainer = () => (
+      <div>
+        <NavBar />
+        <Route path="/" exact component={Home} />
+        <Route path="/home/processing" component={Processing} />
+        <Route path="/home/delivered" component={DeliveredHome} />
+        <Route path="/home/pending" component={PendingHome} />
+        <Route path="/inventory" component={Inventory} />
+        <Route path="/delivery_man/assign_order" component={AssignOrder} />
+        <Route path="/delivery_man/check_status" component={CheckStatus} />
+        <Route path="/delivery_man/delivered" component={Delivered} />
+        <Route path="/delivery_man/pending" component={Pending} />
+      </div>
+    );
+
     return (
       <Router>
-        <NavBar />
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/home/processing" component={Processing} />
-          <Route path="/home/delivered" component={DeliveredHome} />
-          <Route path="/home/pending" component={PendingHome} />
-          <Route path="/inventory" component={Inventory} />
-          <Route path="/delivery_man/assign_order" component={AssignOrder} />
-          <Route path="/delivery_man/check_status" component={CheckStatus} />
-          <Route path="/delivery_man/delivered" component={Delivered} />
-          <Route path="/delivery_man/pending" component={Pending} />
+          <Route exact path="/login" component={Login} />
+          <Route component={DefaultContainer} />
         </Switch>
       </Router>
     );
