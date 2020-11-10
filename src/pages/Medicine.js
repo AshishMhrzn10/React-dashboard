@@ -4,8 +4,6 @@ import {
 	Row,
 	Col,
 	Table,
-	Button,
-	Modal,
 	Dropdown,
 	DropdownButton,
 } from "react-bootstrap";

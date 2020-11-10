@@ -117,11 +117,11 @@ function Inventory() {
 											type="file"
 											value={image}
 											accept="image/*"
-											onChange={(e) => setImage(e.target.files[0])}
+											// onChange={(e) => setImage(e.target.files[0])}
 										/>
-										{image.map((item, index) => {
+										{/* {image.map((item, index) => {
 											return <img key={index} src={item.image} alt="" />;
-										})}
+										})} */}
 										<img src={require("../../images/todo.png")} alt="" />
 										<img src={require("../../images/todo.png")} alt="" />
 										<img src={require("../../images/todo.png")} alt="" />
