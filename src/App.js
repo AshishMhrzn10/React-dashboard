@@ -16,6 +16,7 @@ import Pending from "./pages/DeliveryMan/Pending";
 import DeliveredHome from "./pages/Home/DeliveredHome";
 import PendingHome from "./pages/Home/PendingHome";
 import Login from "./pages/Login";
+import Medicine from "./pages/Medicine";
 
 export class App extends Component {
   render() {
@@ -33,11 +34,12 @@ export class App extends Component {
         <Route path="/delivery_man/pending" component={Pending} />
       </div>
     );
-
+    
     return (
       <Router>
         <Switch>
           <Route exact path="/login" component={Login} />
+          <Route path="/medicine" component={Medicine} />
           <Route component={DefaultContainer} />
         </Switch>
       </Router>
