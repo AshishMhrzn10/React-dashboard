@@ -21,6 +21,24 @@ const Search = styled.input`
 function Medicine() {
 	const [search, setSearch] = useState("");
 	const [added, setAdded] = useState([]);
+	const [selected, setSelected] = useState({
+		title: "Select",
+		id: null,
+	});
+	const [category, setCategory] = useState([
+		{ title: "First Category", id: 0 },
+		{ title: "Second Category", id: 1 },
+		{ title: "Third Category", id: 2 },
+	]);
+	const [items, setItems] = useState([
+		{ title: "Item 1", id: 0, category: { id: 0 } },
+		{ title: "Item 2", id: 1, category: { id: 0 } },
+		{ title: "Item 3", id: 2, category: { id: 0 } },
+		{ title: "Item 4", id: 3, category: { id: 1 } },
+		{ title: "Item 5", id: 4, category: { id: 1 } },
+		{ title: "Item 6", id: 5, category: { id: 2 } },
+		{ title: "Item 7", id: 6, category: { id: 2 } },
+	]);
 	const [medicine, setMedicine] = useState([
 		{
 			id: "1",
@@ -58,26 +76,50 @@ function Medicine() {
 			isAdded: !prevState.isAdded,
 		}));
 	};
+	const selectCategory = (id, title) => {
+		setSelected({ id: id, title: title });
+	};
+
 	return (
 		<Container>
 			<Row className="mb-3">
-				<Col md={11}>
+				<Col md={8}>
 					<Search
 						type="text"
 						placeholder="Search name of medicine"
 						onChange={updateSearch}
 					/>
 				</Col>
-				<Col md={1}>
+				<Col md={2}>
 					<div>
 						<DropdownButton
 							id="dropdown-basic-button"
-							title="Category"
+							title={selected.title}
 							variant="success"
 						>
-							<Dropdown.Item>Action</Dropdown.Item>
-							<Dropdown.Item>Another action</Dropdown.Item>
-							<Dropdown.Item>Something else</Dropdown.Item>
+							{category.map((cat) => (
+								<Dropdown.Item
+									onClick={() => selectCategory(cat.id, cat.title)}
+									key={cat.id}
+								>
+									{cat.title}
+								</Dropdown.Item>
+							))}
+						</DropdownButton>
+					</div>
+				</Col>
+				<Col md={2}>
+					<div>
+						<DropdownButton
+							id="dropdown-basic-button"
+							title="Sub Category"
+							variant="success"
+						>
+							{items
+								.filter((item) => item.category.id === selected.id)
+								.map((sub) => (
+									<Dropdown.Item key={sub.id}>{sub.title}</Dropdown.Item>
+								))}
 						</DropdownButton>
 					</div>
 				</Col>

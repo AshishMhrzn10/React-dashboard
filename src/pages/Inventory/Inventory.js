@@ -50,6 +50,7 @@ function Inventory() {
 			discount: "",
 			description: "",
 		});
+		setShow(false);
 	};
 
 	useEffect(() => {
