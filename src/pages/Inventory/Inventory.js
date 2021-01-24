@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Table, Button, Modal } from "react-bootstrap";
+import {
+	Container,
+	Row,
+	Col,
+	Table,
+	Button,
+	Modal,
+	DropdownButton,
+	Dropdown,
+} from "react-bootstrap";
 import styled from "styled-components";
-import firebaseDb from "../../firebase";
+// import firebaseDb from "../../firebase";
 
 const TD = styled.td`
 	border-bottom: 1px solid #dee2e6;
@@ -20,12 +29,33 @@ const TD2 = styled.td`
 function Inventory() {
 	const [Response, setResponse] = useState([]);
 	const [show, setShow] = useState(false);
+	const [selected, setSelected] = useState({
+		title: "Category",
+		id: null,
+	});
+	const [subCategory, setSubCategory] = useState("SubCategory");
+	const [category, setCategory] = useState([
+		{ title: "First Category", id: 0 },
+		{ title: "Second Category", id: 1 },
+		{ title: "Third Category", id: 2 },
+	]);
+	const [items, setItems] = useState([
+		{ title: "Item 1", id: 0, category: { id: 0 } },
+		{ title: "Item 2", id: 1, category: { id: 0 } },
+		{ title: "Item 3", id: 2, category: { id: 0 } },
+		{ title: "Item 4", id: 3, category: { id: 1 } },
+		{ title: "Item 5", id: 4, category: { id: 1 } },
+		{ title: "Item 6", id: 5, category: { id: 2 } },
+		{ title: "Item 7", id: 6, category: { id: 2 } },
+	]);
 	const [state, setState] = useState({
 		pname: "",
 		qty: "",
 		rate: "",
 		discount: "",
 		description: "",
+		cat: selected.title,
+		subcat: subCategory,
 	});
 
 	const handleInputChange = (e) => {
@@ -38,48 +68,43 @@ function Inventory() {
 
 	const handleFormSubmit = (e) => {
 		e.preventDefault();
-		firebaseDb.child("Products").push(state, (err) => {
-			if (err) {
-				console.log(err);
-			}
-		});
-		setState({
-			pname: "",
-			qty: "",
-			rate: "",
-			discount: "",
-			description: "",
-		});
+		// firebaseDb.child("Products").push(state, (err) => {
+		// 	if (err) {
+		// 		console.log(err);
+		// 	}
+		// });
+		// setState({
+		// 	pname: "",
+		// 	qty: "",
+		// 	rate: "",
+		// 	discount: "",
+		// 	description: "",
+		// 	cat: "",
+		// 	subcat: "",
+		// });
+		console.log("submitted");
 		setShow(false);
 	};
 
-	useEffect(() => {
-		// const apiUrl = `http://www.nasatechnicalsolutions.com.np/api/products`;
-		// axios
-		// 	.get(apiUrl)
-		// 	.then((response) => {
-		// 		setResponse(response.data.data);
-		// 		console.log(response.data.data);
-		// 	})
-		// 	.catch((error) => {
-		// 		console.log(error);
-		// 	});
-		var productData = firebaseDb.child("Products");
-		productData.on("value", (snapshot) => {
-			const datas = snapshot.val();
-			const dataList = [];
-			for (let id in datas) {
-				dataList.push({ id, ...datas[id] });
-			}
-			setResponse(dataList);
-		});
-	}, []);
+	// useEffect(() => {
+	// 	const apiUrl = `http://www.nasatechnicalsolutions.com.np/api/products`;
+	// 	axios
+	// 		.get(apiUrl)
+	// 		.then((response) => {
+	// 			setResponse(response.data.data);
+	// 			console.log(response.data.data);
+	// 		})
+	// 		.catch((error) => {
+	// 			console.log(error);
+	// 		});
+	// }, []);
 
 	const deleteProduct = (id) => {
-		if (window.confirm("Are you sure you want to delete this record?")) {
-			const del = firebaseDb.child(`Products/${id}`);
-			del.remove();
-		}
+		// if (window.confirm("Are you sure you want to delete this record?")) {
+		// 	const del = firebaseDb.child(`Products/${id}`);
+		// 	del.remove();
+		// }
+		console.log("delete");
 	};
 
 	return (
@@ -187,24 +212,51 @@ function Inventory() {
 											accept="image/*"
 											// onChange={(e) => setImage(e.target.files[0])}
 										/>
-									</Col>
+									</Col> */}
 									<Col xs={6} md={2}>
-										<DropdownButton id="dropdown-basic-button" title="Category">
-											<Dropdown.Item>Action</Dropdown.Item>
-											<Dropdown.Item>Another action</Dropdown.Item>
-											<Dropdown.Item>Something else</Dropdown.Item>
+										<DropdownButton
+											id="dropdown-basic-button"
+											name="cat"
+											title={selected.title}
+											value={state.cat}
+											variant="success"
+										>
+											{category.map((cat) => (
+												<Dropdown.Item
+													onClick={() => {
+														setSelected({ id: cat.id, title: cat.title });
+														console.log(selected.title);
+													}}
+													key={cat.id}
+												>
+													{cat.title}
+												</Dropdown.Item>
+											))}
 										</DropdownButton>
 									</Col>
 									<Col xs={6} md={3}>
 										<DropdownButton
 											id="dropdown-basic-button"
-											title="Sub Category"
+											name="subcat"
+											title={subCategory}
+											value={state.subcat}
+											variant="success"
 										>
-											<Dropdown.Item>Action</Dropdown.Item>
-											<Dropdown.Item>Another action</Dropdown.Item>
-											<Dropdown.Item>Something else</Dropdown.Item>
+											{items
+												.filter((item) => item.category.id === selected.id)
+												.map((sub) => (
+													<Dropdown.Item
+														key={sub.id}
+														onClick={() => {
+															setSubCategory(sub.title);
+															console.log(subCategory);
+														}}
+													>
+														{sub.title}
+													</Dropdown.Item>
+												))}
 										</DropdownButton>
-									</Col> */}
+									</Col>
 								</Row>
 								<Row style={{ float: "right" }}>
 									<Button
