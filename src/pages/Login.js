@@ -8,15 +8,21 @@ function Login() {
 		<Container fluid>
 			<Row>
 				<Col style={{ marginLeft: "35px" }}>
-					<Button variant="primary" className="badge">
-						System Monitor
-					</Button>
-					<Button variant="primary" className="badge">
-						Account
-					</Button>
-					<Button variant="primary" className="badge">
-						Sales
-					</Button>
+					<Link to="/">
+						<Button variant="primary" className="badge">
+							System Monitor
+						</Button>
+					</Link>
+					<Link to="/account">
+						<Button variant="primary" className="badge">
+							Account
+						</Button>
+					</Link>
+					<Link to="/sales">
+						<Button variant="primary" className="badge">
+							Sales
+						</Button>
+					</Link>
 					<div className="title">
 						<h1>
 							Welcome To <p>Login Page</p>
